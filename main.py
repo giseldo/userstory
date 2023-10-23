@@ -9,7 +9,9 @@ import numpy as np
 
 nlp =spacy.load("en_core_web_sm")
 
-st.write("Qualidade da User Story")
+st.Title("Legibilidade da User Story")
+
+st.write("Uma ferramenta que mede a legibilidade das user story para melhorar a estimativa de esforço")
 
 with st.form(key="frm_principal"):
     txtuser = st.text_area(label="Descricao da User Story", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
