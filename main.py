@@ -9,7 +9,7 @@ import numpy as np
 
 nlp =spacy.load("en_core_web_sm")
 
-st.Title("Legibilidade da User Story")
+st.title("Legibilidade da User Story")
 
 st.write("Uma ferramenta que mede a legibilidade das user story para melhorar a estimativa de esforço")
 
