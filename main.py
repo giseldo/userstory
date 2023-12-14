@@ -9,9 +9,9 @@ import numpy as np
 
 nlp =spacy.load("en_core_web_sm")
 
-st.title("Legibilidade da User Story")
+st.title("NEO USER STORY HELPER")
 
-st.write("Uma ferramenta que mede a legibilidade das user story para melhorar a estimativa de esforço")
+st.write("Uma ferramenta para auxiliar na construção de user story.")
 
 with st.form(key="frm_principal"):
     txtuser = st.text_area(label="Descricao da User Story", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
@@ -52,14 +52,13 @@ if btn_submit:
         ssst1.metric(label="RF", value= RF )
          
     with stEE:
-        
         FK = value=df["flesch_kincaid_grade"]
         GF = value=df["gunning_fog"]
         ARI = df["automated_readability_index"]
         LC = value=df["coleman_liau_index"]
         RF = round(np.mean([FK, GF, ARI, LC]), 2)
         #st.write("Simples ou Complexo")
-        st.write("Alto, Médio Baixo")
+        st.write("Alto, Médio ou Baixo")
         
         if RF > 12.24:
             st.warning("""Estimativa de esforço: Alto""")
