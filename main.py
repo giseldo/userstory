@@ -11,10 +11,10 @@ nlp =spacy.load("en_core_web_sm")
 
 st.title("NEO USER STORY HELPER")
 
-st.write("Uma ferramenta para auxiliar na construção de user story.")
+st.write("Uma ferramenta para auxiliar na construção de user story")
 
 with st.form(key="frm_principal"):
-    txtuser = st.text_area(label="Descricao da User Story", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
+    txtuser = st.text_area(label="Descrição da User Story", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
     btn_submit = st.form_submit_button(label="Verificar Qualidade")
     
 if btn_submit:
