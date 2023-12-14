@@ -58,7 +58,7 @@ if btn_submit:
         LC = value=df["coleman_liau_index"]
         RF = round(np.mean([FK, GF, ARI, LC]), 2)
         #st.write("Simples ou Complexo")
-        st.write("Alto, Médio ou Baixo")
+        st.write("Opções possíveis: Alto, Médio ou Baixo")
         
         if RF > 12.24:
             st.warning("""Estimativa de esforço: Alto""")
@@ -66,7 +66,7 @@ if btn_submit:
             st.warning("""Estimativa de esforço: Baixo""")
     
     with stR:
-        st.write("Recomendamos aumentar a legibilidade do texto")
+        st.warning("Recomendamos aumentar a legibilidade do texto")
             
     with stD:
         st.dataframe(df.T)
