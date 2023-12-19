@@ -1,7 +1,6 @@
 # Title
-Uma ferramenta que mede a qualidade das user stories
+A tool to help teams that use agile practices to building better user stories
 # Author
-Giseldo da Silva Neo
-giseldo@gmail.com
-# Date
-14/12/2023
+Giseldo da Silva Neo | giseldo@gmail.com
+# Last Update Date
+19/12/2023
