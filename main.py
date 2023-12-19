@@ -75,13 +75,13 @@ if btn_submit:
         #else:
         
         # descomentar daqui para baixo em produção
-        #client = OpenAI()
-        #completion = client.chat.completions.create(
+        client = OpenAI()
+        completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
             {"role": "user", "content":"How can i improve this this user story : {}".format(txtuser)}]
-        #)
-        #st.success(completion.choices[0].message.content)
+        )
+        st.success(completion.choices[0].message.content)
         st.warning("Este módulo traz recomendações para melhorar a escrita da sua User Story.")
             
     with stD:
