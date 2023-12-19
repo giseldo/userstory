@@ -1,6 +1,7 @@
 textdescriptives
 streamlit
 openai
-spacy==3.5.0
 joblib
+scikit-learn
+spacy==3.5.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
