@@ -8,7 +8,10 @@ import numpy as np
 from openai import OpenAI
 import joblib
 import os
+from dotenv import load_dotenv
 #import spacy_streamlit
+
+load_dotenv()
 
 nlp =spacy.load("en_core_web_sm")
 
