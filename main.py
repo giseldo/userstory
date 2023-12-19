@@ -6,12 +6,13 @@ import spacy
 from spacy import displacy
 import numpy as np
 from openai import OpenAI
+import joblib
 #import spacy_streamlit
 
 nlp =spacy.load("en_core_web_sm")
 
-st.title("NEO USER STORY HELPER")
-openai_key = st.sidebar.text_input("OPENAI KEY")
+st.title("NEO USER STORY TUTOR")
+#openai_key = st.sidebar.text_input("OPENAI KEY")
 st.write("A tool to help teams that use agile practices to building better user stories")
 
 with st.form(key="frm_principal"):
@@ -23,11 +24,10 @@ if btn_submit:
     # models = ["en_core_web_sm"]
     # spacy_streamlit.visualize(models, txtuser)
     
-    stLeg, stR, stEE, stNER, stD = st.tabs(["Readability", "Recommendation", "Estimate", "*NER", "*Data" ])
+    stLeg, stR, stEE, stNER, stD = st.tabs(["Readability", "Recommendation", "Estimate", "Named Entity", "Data" ])
     df = td.extract_metrics(text=txtuser, spacy_model="en_core_web_sm", metrics=None)
     
     with stNER:
-        st.warning("*Not to be used")
         doc = nlp(txtuser) 
         dep_svg = displacy.render (doc, style="dep", jupyter=False)
         #st.header("Dependency visualizer")
@@ -36,6 +36,7 @@ if btn_submit:
         st.subheader("Entity visualizer")
         ent_html = displacy.render(doc, style="ent", jupyter=False)
         st.markdown(ent_html, unsafe_allow_html=True)
+        st.warning("Este módulo marca substantivos próprios da User Story informada acima. No fufuro pretende-se anotar palavras sensiveis ao contexto relacionadas a user story tais como. As a <role> I can <capability>, so that <receive benefit>.")
         
     with stLeg:
         st.header("Readability" )
@@ -52,28 +53,36 @@ if btn_submit:
         sst3.metric(label="ARI", value=round(ARI,2), help="Automated Readability Index - ARI")
         sst4.metric(label="LC", value=round(LC,2), help="Coleman-Liau index")
         ssst1, ssst2, ssst3, ssst4 = st.columns(4)
-        ssst1.metric(label="RF", value= RF, help="Resultado Final. Média entre FK, GF, ARI e LC")
-        
+        ssst1.metric(label="RF", value= RF, help="Resultado Final. Média aritmética entre os indicadores FK, GF, ARI e LC")
+        st.warning("Este módulo apresenta os indíces de legibilidade do texto da sua user story.")
         st.warning("Readability indices need to be interpreted with caution, as their formulas use only 2 (two) variables: complex words and long sentences. Therefore, they are not able to measure the cohesion and coherence of a business User Story, which covers semantic, syntactic and pragmatic factors.")
          
     with stEE:
-        st.warning("*Not implemented (To be used with a Machine Learning Model)")
         st.subheader("Estimated Story Points" )
-        sp = 7
-        st.write("Story Points: {}".format(sp))
+        st.selectbox("Machine Learning Predictor Model Used",("7764",), help="Utilize o modelo 7764. A escolha automática do melhor modelo a ser utilizado (ou seja qual o melhor modelo que é mais semelhante a sua User Story) ainda será implementado!")
+        model = joblib.load("models/7764.model")
+        vec = joblib.load("models/7764.vec")
+        X_bow_matrix = vec.transform([txtuser])
+        sp = model.predict(X_bow_matrix)        
+        st.metric(label="Estimated Story Points", value=round(sp[0],2))
+        
+        st.warning("Este módulo estima automáticante o esforço em Story Poits da User Story informada acima. Esse modelo é treinado com os dados históricos de outros projetos (ex: 7765).")
         
     with stR:
         st.subheader("Recommendation" )
-        if openai_key != "":            
-            client = OpenAI(api_key=openai_key)
-        else:
-            client = OpenAI()
-        completion = client.chat.completions.create(
+        #if openai_key != "":            
+        #    client = OpenAI(api_key=openai_key)
+        #else:
+        
+        # descomentar daqui para baixo em produção
+        #client = OpenAI()
+        #completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
-            {"role": "user", "content":"How can i improve this this user story : {}".format(txtuser)}])
-
-        st.success(completion.choices[0].message.content)
+            {"role": "user", "content":"How can i improve this this user story : {}".format(txtuser)}]
+        #)
+        #st.success(completion.choices[0].message.content)
+        st.warning("Este módulo traz recomendações para melhorar a escrita da sua User Story.")
             
     with stD:
         st.subheader("Basic Text Features Extracted")

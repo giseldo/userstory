@@ -1,0 +1,130 @@
+,issuekey,storypoints,context
+0,4550129,2,show basic information workspace when show workspace instead blank page select workspace write welcome workspacename list user workspace deletion button red confirmation popup
+1,4512995,1,notification return undefined undefined try import bus
+2,4501513,1,bugfix border image icon padding md dialog
+4,4500217,2,image visible anymore base href if image miss this certainly relate add asset url
+5,4490772,2,add bus container component su content test see
+6,4490638,2,workspace list closeable even user close workspace list click current workspace sense closeable regular way click outside dialog relate fix
+7,4490543,1,add autofocus login page the login field autofocuse
+8,4490540,1,disable autofocus mobile mode this bother keyboard popup screen
+9,4490537,1,in mobile add new workspace icon in mobile workspace workspace list icon add icon
+11,4490526,2,receive delete event sse nicely handle situation delete element page as user i element subelement delete su sa comp sl undeploy bus deletion bus progress deletion i notify nice way i surprised optionally continue i possible to discuss case simply workspace main page lock page message say delete
+12,4490449,4,new bus progress broadcast sse if browser open workspace add new bus progress appear bus import ok
+14,4490417,2,during search tree element hide fold visible unfold parent from this happen instead
+15,4490409,1,show green lead current workspace feature year firework
+16,4490393,2,container name reachabilitie incorrect real petal when import bus name container reachabilitie incorrect it container instead petal
+17,4489747,4,reload bus container component su work workspace probably load no error infinitely loading maybe opportunity use resolve load workspace datum
+18,4489468,5,move logout avatar bar in order solve but avatar left mobile
+19,4489115,2,worskpace list gray bar in order solve most certainly dialog move workspace component constrain term gray
+20,4488941,3,workspace deletion ui relate the deletion button workspace configuration pane red popup confirm action description happen workspace delete
+21,4488931,3,workspace deletion api care stop current import stuff like relate
+22,4488773,5,component deployment ui use
+23,4488766,3,su deployment ui use
+24,4488761,2,spinner workspace list use store display previous datum fetch update one
+25,4488758,3,su deployment api the backend allow frontend trigger su deployment zip upload relate
+26,4488749,4,component deployment api the backend allow frontend trigger component deployment zip upload relate
+27,4488743,4,serve file petal deployment relate
+29,4445608,2,investigate batchaction effect basically action batchaction take account effect either need extract action trigger effect fix upstream second well course
+30,4445142,3,use navigate instead dispatch select workspace in workspace dialog prefer use navigate rely implementation fetch workspace
+31,4428296,1,show message search bar yield result so user confused type search bar pay attention do forget follow test check warning say bus available sidenav workspace workspace match bus container component su contain some random search
+32,4427550,3,incoherent state bus import view import click when import bus mock second time example receive error sse follow thing happen click import import grayed import clickable moment happen store update redirect newly create bus progress url change view reload expect the point happen i think relate
+33,4427255,5,rework sse frontend two problem need sure event arrive sse moment open process currently case extreme case need sure subscription event properly close change workspace currently case
+34,4424540,4,improve mock fail bus import currently mock fail http error import fail sse error second import work rest we introduce special ip fail let people play want exploit test
+35,4422243,2,uniformise identifier user rest backend user identify username field datatype d field it well use d simplify code frontend thank do forget update mock
+37,4370314,3,show workspace user workspace list in workspace list workspace multiple user write you use workspace this
+38,4124506,1,too verbose error backend access incorrect workspace if i try access lol backend show following detail summary very long stacktrace warn error the follow warning detect warning unknown failure detect multiexception stack http not find cause numberformatexception for input string lol method multiexception stack illegalargumentexception while attempt resolve dependency workspaceresource error find multiexception stack illegalstateexception unable perform operation resolve workspaceresource this kind thing
+39,4123891,3,ensure frontend work backend in particular todo x bus import x bus discard x add workspace x verify connected user show x ensure test pass
+41,3878178,1,preload main application js chunk user log when fix great user log rest application load smooth
+42,3878163,2,add copyright bundle js produce angular cli only head file see
+43,3755024,3,allow redo previously fail bus import as user i import fail i able change setting click redo button
+44,3740709,3,add admin user default as user i start cockpit time open website i want prompt create admin user
+45,3614173,1,add license information deliverable the deliverable contain license copyright file relate
+46,3589704,2,laxer validation backend output currently backend validate send frontend strictly workspace issue error it sense enable dev time prefer insure strict input come frontend
+47,3568378,3,test import bus import fail verify error display second import work verify sidenav see
+48,3506216,2,allow cancel bus import during bus import get stick user want cancel it abort server kill actor remove db etc
+49,3438086,1,change server default port currently default port as discuss sprint review end sprint begin sprint app use port it convenient change
+50,3397034,4,improve error message import bus failure currently thing like connectionerrorexception can connect uri service jmx petalsjmx lol lol there extra exception password visible
+51,3396148,3,remember workspace user as user i open petals cockpit i want directly workspace
+52,3201286,3,make executable product runnable configuration default make startup script default configuration put log file
+53,3063747,5,workspace collaboration as workspace user i add remove user workspace i access i want collaborate datum
+54,27923655,1,api prevent workspace duplicate backend check workspace exist create new
+55,27923600,1,ui prevent workspace duplicate frontend check workspace exist request creation
+56,9566526,5,set run petals set running petal local machine test purpose create custom artifact run fake service hello world type
+57,9561475,1,api send endpoint detail get have service n interface return endpoint detail service string interface string relate
+58,9561444,1,api send interface detail get can n endpoint n service return service detail endpoint string service string relate
+59,9561388,3,ui display endpoint detail relate
+60,9561370,3,ui display interface detail relate
+61,9560801,2,ca reopen workspace selection dialog open worskpace selection dialog yellow open workspace button open left purple petal logo close dialog click outside press esc now user reopen workspace should able open dialog petal icon dialog open
+62,9445694,1,ui display sl version overview as load sl version visible upload component it visible informational card like text about sl version sl version no need state indicator sl load
+63,9375033,1,fix hidden button workspace deletion button visible scroll
+64,9373632,2,improve upload component card layout reduce card size content adapt width content activate always card column mode row wrap content big
+66,9373022,2,ui refactor service endpoint interface event event
+67,9267593,1,ui remove gap administration page in administration page browser height large white gap window
+68,9024566,4,ui fix choose sls component deployment follow unfinished issue sl jbi component share library list sl zip container way prevent override sl container choose override add deploy component post body contain json body omit overridden new omit sls overridden overridden sharedlibrarie slname version version field field null
+71,8917224,4,api send interface list interface d d string string containerid string componentid string
+73,8917131,1,display endpoint list endpoint visible service tab
+75,8917052,3,api send endpoint list endpoint d d string string containerid string componentid string
+76,8832087,1,import bus import error display service the problem probably relate discard retry after bus import failure update form correct information import bus carry display service need investigate
+77,8828236,2,in case problem read risk return null element send when send component field expect the component original actual the component null
+78,8828191,1,problem read when bind component file select upload component shared library component detect it detect
+79,8551332,5,ui upgrade service list service tree service tree look like relate
+80,8263979,2,replacement old test protractor cypress test delete
+81,8054619,1,reopen item leave menu tree search find
+82,7971276,3,continuous deployment break cd break relate generation apidoc folder it deploy month fix asap
+83,7968765,3,api send service detail get can n endpoint n interface return service detail endpoint string interface string relate
+84,7967983,5,ui display service detail relate
+85,7967960,2,display service detail display information central page service click
+86,7967920,3,api sse push instantiate service list relate
+87,7965741,5,ui display service list display service clickable item relate
+88,7965461,5,api return instantiated service list return service service d d d containerid containerid componentid componentid relate
+89,7965432,2,display service list as user i click service tab i want service instantiate
+90,7932115,3,retry bus import bus import fail option retry import edit create new
+93,7169339,3,show container properly currently container backend simply return frontend properly container bus overview container graph container overview
+94,7070740,2,do store import bus password clear db normally reason store
+95,7015635,5,ui change share library version deploy to read jbi service library identification zip sl container way prevent deployment read version jbi service zip override override add deploy share library post body contain json body mandatory sharedlibrary slname version
+96,6997889,3,ui change sa deployment to read sa zip jbi service assembly identification sa container way prevent deployment allow override override add deploy service assembly post body contain json body omit wo overridden new relate
+97,6960765,1,show component su overview in way sa
+98,6940923,4,change service unit name service assembly deployment as user i choose su present inside sa deploy i want different name setup inside zip i able choose i want customize name input case careful order element guarantee accord xml spec find way know pertain su
+99,6940717,1,change service assembly deployment as user i choose sa deploy i want different setup inside zip i able choose i want customize input case
+100,6940710,1,change share library version deployment as user i choose version sl deploy i want different version setup inside zip i able choose i want customize version input case
+101,6903480,1,clear upload component upload from container upload upload component reset initial state upload
+102,6203933,2,backend fail retrieve install parameter uninstall error petalsadmin line npe install component start stop uninstall backend fail
+104,6167414,3,display error separated modal petal error verbose ui organized display we consider display logo small text invite user click button want complete log also log display nearly screen well visibility
+107,5799639,3,ui choose sl component deployment for read sls jbi component share library list zip sl zip container way prevent deployment override sl container choose override add deploy component post body contain json body omit wo overridden new omit sl wo overridden overridden sharedlibrarie slname version
+108,5678789,1,follow frontend improve multiple view the follow discussion address start discussion comment create share component draw lead time open new issue
+109,5659124,2,handle workspace little bit different relate
+110,5552472,5,manage workspace user admin as application admin i want able manage user exist workspace see
+111,5552430,5,manage application user admin as admin i want able add remove user application
+113,5551419,3,undeploy shared library as user i want able undeploy share library task
+114,5551329,4,deploy shared libraries as user i want able deploy share library container task
+115,5550593,1,choose share library component deployment as user i deploy component i want choose sl component i able choose i want customize sl component configuration zip list show i select i want need work
+116,5549858,3,in tree sa sl component category bus container component comp su comp sa sa sa sl sl
+118,5497064,4,do fail incorrect url currently user try access url exist application simply fail reload we redirect user workspace instead later handle
+120,5439566,5,make backend rely possible container instead db related rewrite mutation command backend act work directly container instead db the db store view current state system input mutation note event source way architecture thing ultimately want remove db related code workspace actor populate db base event happen
+122,5439379,2,do red warning field pristine in form simply move field field mark red pristine for example workspace dialog field red soon un select
+124,5439349,1,change component deployment as user i choose component deploy i want different setup inside zip i able choose i want customize input case
+126,5198623,1,return bad request deploy component su fail see implement handle error frontend need
+127,5178595,4,ui sa lifecycle management once close the sa operation tab lifecycle operation su mention affect sus the su operation tab lifecycle operation su sa mention affect sa message link sa say change state user change sa state the sse event take account maybe remove
+128,5178538,5,ui introduce service assemblies show service assembly tree container su component exactly component su visible sa exactly sa the sa overview list sus possibility click overview the su overview click tree node component sa link sa link component
+129,5178504,3,api sa deployment after introduce post id serviceassemblie deploy sa event sse this maybe mean event remove
+130,5178484,3,api sa lifecycle management after introduce put id serviceassemblie id change state event sse we remove put id serviceunits id change state this maybe mean event remove maybe
+131,5178456,4,api introduce service assemblies backend introduce get id read operation serviceassemblie field id response serviceassemblie field sse event serviceassembly field su response for need add migration db step create exist sus corresponding sa state change url datatype frontend continue work change state su change state sa
+132,5164137,3,sa multi su as user i want deploy sa container see tree container manage lifecycle see sus overview go sa su i want able deploy su component sa mono su visible
+133,5164116,2,move lifecycle management component operation tab add button state lifecycle management
+134,5125632,4,show error case deploy lifecycle problem sus components when lifecyle operation invoke error come backend this error show page
+135,5125611,4,container overview nice schema as user i click container i like kind schema summarise state container idea heatmap element component size number service deploy colour shade red green base start move
+136,5125595,5,bus overview nice schema as user i click bus i want overview follow element later container and i want nice schema click container example
+137,5125461,3,event sse redirect people initiate action currently receive event sse new deploy component su unload artefact delete bus etc everybody get redirect newly deploy component su but i initiator action i want the solution differentiate direct result action success http indirect result action receival event sse
+139,4894081,2,when clear form import bus clean error i import fail so far good error display then i clean error
+140,4878913,2,open container content page interfere workspace change if click container bus try change workspace follow error happen error error uncaught promise typeerror can read property container undefined typeerror can read property container undefined most certainly close workspace remove need container content page good completely avoid situation close workspace url change
+142,4749758,2,http import error show late open import form if import bus quickly shift bus progress http error show form
+144,4699345,4,make test backend work relate
+145,4650512,1,use material button sus component lifecycle management see
+146,4650061,1,transaction error status work in backend workspaceactor prefer throw exception instead return status sure thing roll case need
+147,4649497,1,unreachable container show container overview currently reachable container list unreachable one important one administration point view
+148,4596003,2,component lifecycle management api see we handle case deploy sus component unload
+149,4595998,2,component lifecycle management ui see it put wid component compid body state start note possible transition and unload sus deploy note conflict status code return transition valid so way directly shutdown load state state component you event sse type contain like d state start
+150,4595947,3,su lifecycle management ui see it put wid serviceunit suid body state start note possible transition note conflict status code return transition valid so way directly shutdown state state su you event sse type contain like d state start
+151,4595825,1,rename release artifact nice ci for example name cockpit instead artifact
+152,4575373,2,rework window workspace list custom md dialog add select workspace count workspace list add different icon workspace add spinner near label workspace fetch workspace list clear input value submit
+153,4551454,2,bus import redirect page when bus import stay page import button
