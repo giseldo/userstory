@@ -1,4 +1,5 @@
 # https://legibilidade.com/sobre
+# 
 
 import streamlit as st
 import textdescriptives as td
@@ -12,12 +13,13 @@ from dotenv import load_dotenv
 #import spacy_streamlit
 
 load_dotenv()
+OPENAIAPIKEY = os.environ["OPENAI_API_KEY"]
 
 nlp =spacy.load("en_core_web_sm")
 
 st.title("NEO USER STORY TUTOR")
 #openai_key = st.sidebar.text_input("OPENAI KEY")
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
 st.write("A tool to help teams that use agile practices to building better User Stories")
 
 with st.form(key="frm_principal"):
@@ -76,7 +78,7 @@ if btn_submit:
     with stR:
         st.subheader("Recommendation" )
        
-        client = OpenAI(api_key=OPENAI_API_KEY)
+        client = OpenAI(api_key=OPENAIAPIKEY)
         completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},

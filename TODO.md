@@ -1,0 +1,1 @@
+# Detalhar melhor os indicadores de legibilidade, quais são os que devem subir e os que devem descer.
