@@ -18,7 +18,7 @@ nlp =spacy.load("en_core_web_sm")
 st.title("NEO USER STORY TUTOR")
 #openai_key = st.sidebar.text_input("OPENAI KEY")
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-st.write("A tool to help teams that use agile practices to building better user stories")
+st.write("A tool to help teams that use agile practices to building better User Stories")
 
 with st.form(key="frm_principal"):
     txtuser = st.text_area(label="User Story Description", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
