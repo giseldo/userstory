@@ -7,12 +7,14 @@ from spacy import displacy
 import numpy as np
 from openai import OpenAI
 import joblib
+import os
 #import spacy_streamlit
 
 nlp =spacy.load("en_core_web_sm")
 
 st.title("NEO USER STORY TUTOR")
 #openai_key = st.sidebar.text_input("OPENAI KEY")
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
 st.write("A tool to help teams that use agile practices to building better user stories")
 
 with st.form(key="frm_principal"):
@@ -54,7 +56,7 @@ if btn_submit:
         sst4.metric(label="LC", value=round(LC,2), help="Coleman-Liau index")
         ssst1, ssst2, ssst3, ssst4 = st.columns(4)
         ssst1.metric(label="RF", value= RF, help="Resultado Final. Média aritmética entre os indicadores FK, GF, ARI e LC")
-        st.warning("Este módulo apresenta os indíces de legibilidade do texto da sua user story.")
+        st.warning("Este módulo apresenta os indíces de legibilidade mais comuns extraídos do texto da sua User Story.")
         st.warning("Readability indices need to be interpreted with caution, as their formulas use only 2 (two) variables: complex words and long sentences. Therefore, they are not able to measure the cohesion and coherence of a business User Story, which covers semantic, syntactic and pragmatic factors.")
          
     with stEE:
@@ -70,12 +72,8 @@ if btn_submit:
         
     with stR:
         st.subheader("Recommendation" )
-        #if openai_key != "":            
-        #    client = OpenAI(api_key=openai_key)
-        #else:
-        
-        # descomentar daqui para baixo em produção
-        client = OpenAI()
+       
+        client = OpenAI(api_key=OPENAI_API_KEY)
         completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
