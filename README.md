@@ -1,5 +1,6 @@
 # Title
-A tool to help teams that use agile practices to building better user stories.
+## A tool to help teams that use agile practices to building better user stories.
+### Autor: Giseldo da Silva Neo (giseldo@gmail.com)
 
 The tool User Story Tutor (aka UST) receives as input a User Story text in
 English and presents personalized recommendations for improving it, with the support of a large language model (LLM). LLMs are very large deep learning models that are pre-trained on vast amounts of data. The tool also presents a prediction in Story Points,
@@ -15,6 +16,7 @@ the team responsible for estimating effort. Readability indexes are extracted fr
 
 For coding, we used StreamLit, a library for building open-source applications for machine learning and data science. The Recommender Module performs a query to OpenAI. The scikit-learn libraries were also used.
 
-# Author
-Giseldo da Silva Neo | giseldo@gmail.com
+## How to cite
+
+Neo G., J. Antão B. Moura, Almeida H., Neo A. V. B. S. e Junior O. G. F. (2024) User Story Tutor (UST) to Support Agile Software Developers. CSEDU 2024.
 
