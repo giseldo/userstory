@@ -1,6 +1,6 @@
 # UST - User Story Tutor
 
-A tool to help teams that use agile practices to building better user stories.
+A onn-line tool to help teams that use agile practices to building better user stories.
 
 ## Author
 Giseldo da Silva Neo 
