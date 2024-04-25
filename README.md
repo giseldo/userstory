@@ -4,7 +4,8 @@ A tool to help teams that use agile practices to building better user stories.
 
 ## Author
 Giseldo da Silva Neo 
-email: giseldo@gmail.com
+
+giseldo@gmail.com
 
 ## Description
 
