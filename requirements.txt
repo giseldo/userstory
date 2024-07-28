@@ -1,5 +1,6 @@
 streamlit
 python-dotenv
+numpy==1.26.0
 textdescriptives
 joblib
 scikit-learn
