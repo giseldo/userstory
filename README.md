@@ -21,7 +21,7 @@ Neo, G. S.; Moura, J.; Almeida, H.; Neo, A. and Freitas Júnior, O. (2024). User
 
 ## Demo on-line
 
-[demo online](https://userstoryteach.streamlit.app/)
+[demo online in StreamLitCloud](https://userstoryteach.streamlit.app/)
 
 ## Code details
 
