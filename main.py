@@ -1,5 +1,4 @@
 # https://legibilidade.com/sobre
-# 
 
 import streamlit as st
 import textdescriptives as td
@@ -10,17 +9,19 @@ from openai import OpenAI
 import joblib
 import os
 from dotenv import load_dotenv
-#import spacy_streamlit
+import glob
 
 load_dotenv()
-OPENAIAPIKEY = os.environ["OPENAI_API_KEY"]
+
+API_KEY = st.sidebar.text_input("OPENAI KEY", type="password")
+if not API_KEY:
+    st.sidebar.error("Por favor, informe uma chave de API válida para continuar")
 
 nlp =spacy.load("en_core_web_sm")
 
-st.title("NEO USER STORY TUTOR")
-#openai_key = st.sidebar.text_input("OPENAI KEY")
+st.title("NEO USER STORY TUTOR (UST)")
 
-st.write("A tool to help teams that use agile practices to building better User Stories")
+st.write("A tool to help teams that use agile practices to estimate and build better User Stories")
 
 with st.form(key="frm_principal"):
     txtuser = st.text_area(label="User Story Description", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
@@ -43,7 +44,7 @@ if btn_submit:
         st.subheader("Entity visualizer")
         ent_html = displacy.render(doc, style="ent", jupyter=False)
         st.markdown(ent_html, unsafe_allow_html=True)
-        st.warning("Este módulo marca substantivos próprios da User Story informada acima. No fufuro pretende-se anotar palavras sensiveis ao contexto relacionadas a user story tais como. As a <role> I can <capability>, so that <receive benefit>.")
+        #st.warning("Este módulo marca substantivos próprios da User Story informada acima. No fufuro pretende-se anotar palavras sensiveis ao contexto relacionadas a user story tais como. As a <role> I can <capability>, so that <receive benefit>.")
         
     with stLeg:
         st.header("Readability" )
@@ -61,24 +62,36 @@ if btn_submit:
         sst4.metric(label="LC", value=round(LC,2), help="Coleman-Liau index")
         ssst1, ssst2, ssst3, ssst4 = st.columns(4)
         ssst1.metric(label="RF", value= RF, help="Resultado Final. Média aritmética entre os indicadores FK, GF, ARI e LC")
-        st.warning("Este módulo apresenta os indíces de legibilidade mais comuns extraídos do texto da sua User Story.")
+        st.warning("This module presents the most common readability indices extracted from your User Story text.")
         st.warning("Readability indices need to be interpreted with caution, as their formulas use only 2 (two) variables: complex words and long sentences. Therefore, they are not able to measure the cohesion and coherence of a business User Story, which covers semantic, syntactic and pragmatic factors.")
          
     with stEE:
         st.subheader("Estimated Story Points" )
-        st.selectbox("Machine Learning Predictor Model Used",("7764",), help="Utilize o modelo 7764. A escolha automática do melhor modelo a ser utilizado (ou seja qual o melhor modelo que é mais semelhante a sua User Story) ainda será implementado!")
-        model = joblib.load("models/7764.model")
-        vec = joblib.load("models/7764.vec")
-        X_bow_matrix = vec.transform([txtuser])
-        sp = model.predict(X_bow_matrix)        
-        st.metric(label="Estimated Story Points", value=round(sp[0],2))
+
+        model_files = glob.glob("models/*.*")
+        model_names = set()
+        for file in model_files:
+            base = os.path.basename(file)
+            name = os.path.splitext(base)[0]
+            model_names.add(name)
+        model_names = sorted(list(model_names))
         
-        st.warning("Este módulo estima automáticante o esforço em Story Poits da User Story informada acima. Esse modelo é treinado com os dados históricos de outros projetos (ex: 7765).")
+        st.selectbox("Machine Learning Predictor Model Used", model_names)
+        selected_model = model_names[0] if model_names else None
+
+        if selected_model:
+            model = joblib.load(f"models/{selected_model}.model")
+            vec = joblib.load(f"models/{selected_model}.vec")
+            X_bow_matrix = vec.transform([txtuser])
+            sp = model.predict(X_bow_matrix)        
+            st.metric(label="Estimated Story Points", value=round(sp[0],2))
+        
+        st.warning("This module automatically estimates the effort in Story Points for the User Story provided above. The model is trained using historical data from other projects.")
         
     with stR:
-        st.subheader("Recommendation" )
+        st.subheader("Recommendation")
        
-        client = OpenAI(api_key=OPENAIAPIKEY)
+        client = OpenAI(api_key=API_KEY)
         completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
@@ -89,6 +102,5 @@ if btn_submit:
             
     with stD:
         st.subheader("Basic Text Features Extracted")
-        st.warning("*Not to be used")
         st.dataframe(df.T)
         

@@ -1,6 +1,11 @@
 from openai import OpenAI
+import os
+from dotenv import load_dotenv
 
-client = OpenAI()
+load_dotenv()
+API_KEY = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=API_KEY)
 
 text = 'As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles'
 
