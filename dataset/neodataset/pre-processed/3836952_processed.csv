@@ -1,0 +1,92 @@
+,issuekey,storypoints,context
+0,109094220,5,scoru wasm tickify module initialization webassembly reference interpreter need tickify it significant time complexity cost break introduce lazy vector instead list module field convert list init lazy vector tickification remove conversion roundtrip directly go lazy vector lazy vector evaluate field small step remain remove use concat
+1,95278232,24,make tezos proxy server honor main block head header tezos commons willing use tezos proxy server deployment their main target use work muscle however surprised serve main block head header indeed tezos proxy server serve register resto directory proxy server serve plugin if like diff src b src let printer mode chain block fun context return shell context let let open protocol let module directory make let new let open let path let open prefix let service path service fun chain block let re assert false expose function way
+2,95043610,1,small merge request encourage document there consensus merge team favor small merge request however state documentation cause confusion past also happen small merge request introduce dead code reject policy know
+3,126542462,100,gossipsub remove peer mesh fanout unsubscribe remove peer topic mesh peer unsubscribe topic rust implementation additionally remove peer fanout unsubscribe this rust wait heartbeat fanout clean unsusbcribe makese sense consistent cleaning mesh unsubscribe
+4,126049644,100,gossipsub only graft peer subscribe topic we invariant time peer ask graft know subscribe topic
+5,125947472,100,gs automaton add case publish output currently case we check message know we add case case message publish
+6,125933482,100,gossipsub fix logic publish direct peer from in implementation direct peer consider case mesh topic fanout topic match none case but implementation message publish direct peer regardless emptiness
+7,125875704,100,gs automaton clarify improve heartbeat output prune the automaton currently output value follow type heartbeat ocaml heartbeat topic peer graft topic peer topic peer prune topic peer set peer peer exchange px propose peer heartbeat output it information contain field allow require input type ocaml type prune peer topic px backoff span in fact field px backoff peer topic miss see function need modify heartbeat prune
+10,125527415,100,gs worker implement worker shutdown see current implementation function shutdown also unsubscribe callback shut worker also discussion
+11,125526330,100,gs worker implement notion message message handler rely codec encode decode message byte the current implementation message codec dummy typechecking
+18,125274294,100,gossipsub return peer wait expiration in implementation connection connection since peer non removed peer wate expire return function
+19,125099090,50,gossipsub backoff connection clearing in go implementation removepeer remove peer state update backoff backoff remove independently removepeer base time heartbeat in implementation removepeer set expire time connection constant backoff connection possibly remove base expire time heartbeat particular connection remove backoff associate i open issue check make sense obvious simplification
+21,124570375,100,gossipsub score check miss ihave control message the follow discussion address start discussion missing score check handle
+22,124570310,100,gossipsub score check miss iwant the follow discussion address start discussion the score check miss implementation
+23,124570183,100,gossipsub grafting negative score the follow discussion address start discussion comment we miss score check implmenetation feel free address future issue let careful forget
+24,124569284,100,gossipsub implement backoff pruning the backoff computation prune peer
+25,123288159,1,node log remove section default stdout log section useful user occupy lot place default stdout log default filedescriptor sink store section safely remove stdout log
+28,122432229,1,high level verbosity event prechecked block prechecke block level store block level store block validate request push treat complete level set new head update current head level timestamp fitness branch store event create lot noise treat block these event probably debug instead info
+29,122431624,1,file descriptor sink miss dot section event fix update current head level timestamp fitness branch update current head level timestamp fitness branch
+30,122304482,4,log add option enable rotation file descriptor sink daily basis goal cut lot thing stdout log worry debug add option file base sink limit time option rotation day n
+31,121760700,1,node log simplify bootstrap log already previous non merged request dec fetch branch block peer dec step the section extremely long wording simplify the solution follow dec bootstrap fetch block peer step
+32,121759462,1,set high verbosity level recurrent event peer disconnection precheck block see useful user we like info instead notice
+33,121662378,3,node log shorten request status size event jan block validate jan request push treat complete in place print request status request worker it way know time operation take like block validation however hardly understandable user the request push give information people knowledge worker interface it push time hour information way consistent log time treat time elapse request submission worker beginning treatment it help look debug particular worker implementation propose solution simplify printing status place prevalidator block validator probably need printing reduce display complete information in situation display jan block validate
+34,121662278,1,node log remove block property timestamp fitness jan update current head jan level timestamp fitness jan branch in event advertize new block property see obscure find like fitness timestamp also probably greppable especially useful developper could fitness replace priority instead timestamp regard update current head message i think worth keep timestamp indeed easy know node date look block timestamp recent the level require party node sync information replace ago short timestamp unit year month s ms case timestamp different log date display timestamp close current date fitness ensure useful feedback albin romain fitness find block hash
+35,121161542,23,translate pyt estimate translation time hour
+36,121161541,53,translate pyt estimate translation hour
+37,121161540,20,translate pyt estimate translation time hour
+38,121161539,2,translate pyt estimate translation time hour
+39,121161537,5,translate pyt estimate translation time hour
+40,116884253,3,evm wasm mock host function goal implement mock version function available host wasm pvm
+41,116884160,3,evm wasm goal implement kernel function available wasm pvm we need add host runtime interface rust
+42,116462276,12,translate pyt estimate translation time hour
+43,116462275,2,translate pyt estimate translation time hour
+44,116462274,4,translate pyt estimate translation time hour
+45,116462273,4,translate pyt estimate translation time hour
+46,116462272,6,translate pyt estimate translation time hour
+47,116462271,4,translate pyt estimate translation time hour
+48,116462270,6,translate pyt estimate translation time hour
+49,116462269,6,translate pyt estimate translation time hour
+50,116462268,8,translate pytest estimate translation time hour
+51,116462267,4,translate pyt estimate translation time hour
+52,116462266,4,translate pyt estimate translation time hour
+53,116462265,2,translate pyt estimate translation time hour
+54,116462264,4,translate pyt estimate translation time hour
+55,116462263,2,translate pyt estimate translation time hour
+56,116462262,4,translate pyt estimate translation time hour
+57,116462261,16,translate pyt estimate translation time hour
+58,116462260,2,translate pyt estimate translation time hour
+59,116462259,2,translate pyt estimate translation time hour
+60,116462258,22,translate pyt estimate translation time hour
+61,116462257,14,translate pyt estimate translation time hour
+62,116462256,4,translate pytest estimate translation time hour
+63,116462255,4,translate pyt estimate translation time hour
+64,116462254,12,translate pyt estimate translation time hour
+65,116462252,24,translate pyt estimate translation time hour
+66,116462251,16,translate pyt estimate translation time hour
+67,116461025,50,continue translate churny pytest estimate translation time hour continuation x testmanager x testscripthashmultiple x testcontract x testcontracttypechecke x testchainid x testexecutionordere x testnonregression x testview x testtypecheck x testbigmaptoself x testnormalize x testgasbound x testscripthashorigination x testcomparables x testbadannotation x testorderintopleveldoesnotmatter x testminiscenario x testminiscenario split test case entrypoint x testscripthashregression
+68,113675088,40,translate slow pytest estimate translation time hour
+69,113675087,6,translate slow pytest estimate translation time hour
+70,113675086,4,translate slow pytest estimate translation time hour
+71,113675085,8,translate churny pytest estimate translation time hour
+72,113675084,2,translate churny pytest estimate translation time hour
+73,113675083,4,translate churny pytest estimate translation time hour
+74,113675082,48,start translate churny pytest estimate translation time hour split x testtypecheckingerrors x x testselfaddresstransfer x testbadindentation x testoriginatecontractfromcontract x testcreateremovetickets x testsendticketsinbigmap
+75,113675081,14,translate churny pytest estimate translation time hour
+76,113675080,4,translate flaky pytest estimate translation time hour
+77,113675079,2,translate flaky pytest estimate translation time hour
+78,113675078,5,translate flaky pytest estimate translation time hour
+79,113675077,14,translate flaky pytest estimate translation time hour x x x x x
+80,113413415,3,evm wasm add tx kernel functionality evm kernel the evm kernel able handle deposit transaction withdrawal like tx kernel add new transaction type evmtransaction encapsulate evm contract the content transaction important ticket dispatch function integrate tx kernel get complicated the actual implementation transaction handle compare rest tx kernel structure move issue this ticket port structure tx kernel evm kernel include datum type splitting amend datum type need evm transaction handling transaction verification tx kernel transaction complicate interleaved evm transaction move issue link
+81,113283576,1,scoru add tezt test run large number evaluation tick disabble default
+82,113283078,3,evm wasm run time large long transaction evm goal find number wasm instruction need run large evm transaction thing figure issue x how large large evm transaction can find look ethereum history x how gas spend say transaction x write contract burn gas x how wasm tick need run transaction evm interpreter integrate beware run contract transaction after transaction succeed result need write permanent storage price wasm tick evm gas storage interaction
+83,113210136,1,scoru wasm tezt test test kernel computation goal there tezt test use client originate wasm scoru load test kernel computation evaluate invocation
+84,113210135,1,scoru wasm tezt test test kernel computation input goal there tezt test use client originate wasm scoru load test kernel input feature enable evaluate invocation
+85,113210047,3,evm wasm evm precompile contract write precompile contract evm interpreter identity function the contract write datum return datum also contract write message log test have evm interpreter contract call build contract
+86,113209443,1,evm wasm common trait encapsulate evm interpreter encapsulate sputnikvm geth struct each struct implement common trait interface allow call contract provide precompile interface storage transaction intercept logx instruction execution log transaction write kernel log
+87,113206519,5,evm wasm integrate geth goal integrate evm interpreter check useful purpose this issue check geth requirement support recent version evm instruction set wrong support precompile way define additional precompile standard precompile require feature rust std use capture execution logx instruction test test contract return successfully test contract fail toplevel revert standard invalid instruction
+88,113200456,3,evm wasm integrate sputnikvm goal integrate evm interpreter check useful purpose this issue sputnikvm requirement support recent version evm instruction set support precompile require feature rust std use capture execution logx instruction alternative original probably date polkadot fork active maintenance version sputnikvm find test run contract old original new evm instruction test contract call succeed add test contract call contract fail
+89,113193382,1,evm wasm evm kernel crate add new sub project trili kernel gitlab project it contain file function define macro cache type
+90,113123525,1,add integration test input goal there protocol level test load test kernel input feature flag enable feed input for similar test src test integration especially protocol somewhat relate
+91,112048779,1,disallow exception entry point function see team meeting note remove mention exception make signature add similar catch exception machine stuck state instead the machine stick error state state tree accessible a stuck pvm advance meaningfully increment tick counter optional add case propagate context the interface expose make call protocol ocaml exception avoid convention we catch wrap ocaml exception defensively we nonetheless need deal non recoverable error cause bug pvm user error post syntactically invalid kernel in pmv milestone implement fallback mechanism put machine stuck state try future compatible error recovery note internally use exception error return value propagate level
+92,111904378,10,dal remove functor cryptographic primitive the functor expose cryptographic primitive add lot complexity since parameter type constant functor replace explicit state encapsulate constant this handle
+93,111514659,1,make module assumption explicit test work host function the follow discussion address start discussion comment if add support module need careful look block correct module instance the current state ok worth add warning
+94,111463618,10,dal allow build safe trust setup code base currently unsafe trust setup build parameter constant to safe trust setup compute file size mb this raise integration question
+95,111452870,5,wasm intricate typechecking parse evaluation during parse evaluation form validation typechecking make parser evaluator convolute non tickifiable trick the testsuite rely test specific stage parse evaluation routine happen later especially module testsuite syntactically invalid test suppose fail parsing decode local variable decode free variable function eval check type equality site import module
+96,111354919,5,scoru wasm ensure unsafe function inside pvm the interpreter rely unsafe unstable function executable testsuite debugging function discussion other function like include pp pp function docstring say witness internal mutation valid assume ast fully load encode assume ast fully load free load vector entirely produce huge proof pvm it valid pvm specific parser various ast printing function rely final binary produce debug trace pretty printing lazy container expose internal bnot pvm we need way ensure function call pvm linte test packagin one possible suggestion find
+97,111253699,5,scoru wasm show proof size bound goal we confidence tick size bound exceed wasm pvm enable feature mainnet need support pen paper reasoning well fuzz testing enouggh discussion
+98,111183937,1,scoru increase message size limit this change necessary wasm pvm supply call string chunk target byte the size limit set byte prevent user supply additional information chunk signature
+100,109644533,3,scoru wasm pvm handle right number input commitment goal the wasm pvm handle right number input commitment a commitment period split l part correspond inbox level non zero message for commitment period call n tbd time after pvm default consecutively read input read input subsequent inbox level the loop continue this mean section commitment period phase process previously accumulate phase gather input loop
+101,109443263,3,wasm pvm test boot compute check size goal add test boot compute vm predefine boot sector input run vm point provide input generate proof check fit size limit
+102,109313844,1,wasm pvm remove duplication input proof the follow discussion address start discussion todo the tree proof contain information derive give request get rid duplication write projection function remove give request field this improve size input proof factor
