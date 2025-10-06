@@ -26,7 +26,7 @@ st.write("A tool to help teams that use agile practices to estimate and build be
 # Organizando os checkboxes em colunas lado a lado
 col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
-    usellm = st.checkbox("Use LLm recommendation", False)
+    usellm = st.checkbox("Use LLM recommendation", False)
 with col2:
     useNER = st.checkbox("Use NER", False)
 with col3:
@@ -71,7 +71,7 @@ def preprocess_text(title, description):
     
 if btn_submit:
 
-    stLeg, stR, stEE, stNER, stD = st.tabs(["Readability", "LLM Recommendation", "Estimator", "Named Entity", "Data" ])
+    stLeg, stR, stEE, stNER, stD = st.tabs(["Readability Indexes", "LLM recommendation", "Estimator Cross-project", "Named Entity", "Basic Text Features" ])
     df = td.extract_metrics(text=txtuser, spacy_model="en_core_web_sm", metrics=None)
     
     with stNER:
