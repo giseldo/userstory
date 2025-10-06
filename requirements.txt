@@ -1,7 +1,9 @@
 streamlit
 python-dotenv
-numpy
-textdescriptives
+numpy==1.26.4
+spacy<3.8 
+thinc<9
+textdescriptives<3.0
 joblib
 scikit-learn
 openai

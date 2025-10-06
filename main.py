@@ -38,13 +38,14 @@ if btn_submit:
     with stNER:
         doc = nlp(txtuser) 
         dep_svg = displacy.render (doc, style="dep", jupyter=False)
+        
         #st.header("Dependency visualizer")
         #st.image(dep_svg, width=50, use_column_width="never")
         
         st.subheader("Entity visualizer")
         ent_html = displacy.render(doc, style="ent", jupyter=False)
         st.markdown(ent_html, unsafe_allow_html=True)
-        #st.warning("Este módulo marca substantivos próprios da User Story informada acima. No fufuro pretende-se anotar palavras sensiveis ao contexto relacionadas a user story tais como. As a <role> I can <capability>, so that <receive benefit>.")
+        st.warning("This module marks proper nouns from the User Story reported above. In the future, the aim is to annotate context-sensitive words related to the user story, such as: As a <role> I can <capability>, so that <receive benefit>.")
         
     with stLeg:
         st.header("Readability" )
@@ -100,9 +101,9 @@ if btn_submit:
             )
             st.success(completion.choices[0].message.content)
         except AuthenticationError as e:
-            st.error("Erro de autenticação: Chave de API inválida ou não fornecida. Por favor, verifique sua chave do OpenAI.")
+            st.error("Authentication error: Invalid or missing API key. Please check your OpenAI key.")
         except Exception as e:
-            st.error("Erro inesperado ao se comunicar com a API do OpenAI.")
+            st.error("Unexpected error communicating with OpenAI API.")
         
         st.warning("This module provides recommendations to improve the writing of your User Story.")
             
