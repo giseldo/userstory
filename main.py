@@ -5,7 +5,7 @@ import textdescriptives as td
 import spacy
 from spacy import displacy
 import numpy as np
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError
 import joblib
 import os
 from dotenv import load_dotenv
@@ -15,11 +15,11 @@ load_dotenv()
 
 API_KEY = st.sidebar.text_input("OPENAI KEY", type="password")
 if not API_KEY:
-    st.sidebar.error("Por favor, informe uma chave de API válida para continuar")
+    st.sidebar.error("Please enter a valid API key to continue.")
 
 nlp =spacy.load("en_core_web_sm")
 
-st.title("NEO USER STORY TUTOR (UST)")
+st.title("USER STORY TUTOR")
 
 st.write("A tool to help teams that use agile practices to estimate and build better User Stories")
 
@@ -91,16 +91,21 @@ if btn_submit:
     with stR:
         st.subheader("Recommendation")
        
-        client = OpenAI(api_key=API_KEY)
-        completion = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
-            {"role": "user", "content":"How can i improve this this user story : {}".format(txtuser)}]
-        )
-        st.success(completion.choices[0].message.content)
-        st.warning("Este módulo traz recomendações para melhorar a escrita da sua User Story.")
+        try:
+            client = OpenAI(api_key=API_KEY)
+            completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "system", "content": "You are a scrum master, skilled in create better user story for agile software projects."},
+                {"role": "user", "content":"How can i improve this this user story : {}".format(txtuser)}]
+            )
+            st.success(completion.choices[0].message.content)
+        except AuthenticationError as e:
+            st.error("Erro de autenticação: Chave de API inválida ou não fornecida. Por favor, verifique sua chave do OpenAI.")
+        except Exception as e:
+            st.error("Erro inesperado ao se comunicar com a API do OpenAI.")
+        
+        st.warning("This module provides recommendations to improve the writing of your User Story.")
             
     with stD:
         st.subheader("Basic Text Features Extracted")
         st.dataframe(df.T)
-        
