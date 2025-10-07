@@ -18,8 +18,10 @@ def preprocess_text(title, description):
     return contexto
 
 if __name__ == "__main__":
+    
     exemplo_titulo = "Implementar tela de login"
     exemplo_descricao = "Como usuário, quero acessar o sistema de forma segura para proteger meus dados."
+
     contexto = preprocess_text(exemplo_titulo, exemplo_descricao)
 
     vec = joblib.load(os.path.join('models','cross_project.vec'))

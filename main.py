@@ -7,9 +7,7 @@ from spacy import displacy
 import numpy as np
 from openai import OpenAI, AuthenticationError
 import joblib
-import os
 from dotenv import load_dotenv
-import glob
 import re
 
 load_dotenv()
@@ -37,7 +35,7 @@ with col5:
     useBasicTextFeatures = st.checkbox("Use Basic Text Features", False)
 
 with st.form(key="frm_principal"):
-    txt_title = st.text_input(label="User Story Title", value="resource page")
+    txttitle = st.text_input(label="User Story Title", value="resource page")
     txtuser = st.text_area(label="User Story Description", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
     btn_submit = st.form_submit_button(label="Analyze")
 
@@ -109,7 +107,7 @@ if btn_submit:
         if useEstimator:
             st.header("Story Points Estimator")
         
-            contexto = preprocess_text("", txtuser)
+            contexto = preprocess_text(txttitle, txtuser)
             model = joblib.load(f"models/cross_project.model")
             vec = joblib.load(f"models/cross_project.vec")
             X_bow_matrix = vec.transform([contexto])
