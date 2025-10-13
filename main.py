@@ -24,18 +24,18 @@ st.write("A tool to help teams that use agile practices to estimate and build be
 # Organizando os checkboxes em colunas lado a lado
 col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
-    usellm = st.checkbox("Use LLM recommendation", False)
-with col2:
-    useNER = st.checkbox("Use NER", False)
-with col3:
     usereadability = st.checkbox("Use Readability Indexes", False)
-with col4:
+with col2:
+    usellm = st.checkbox("Use LLM recommendation", False)
+with col3:
     useEstimator = st.checkbox("Use Estimator Cross-project", False)
+with col4:
+    useNER = st.checkbox("Use NER", False)
 with col5:
     useBasicTextFeatures = st.checkbox("Use Basic Text Features", False)
 
 with st.form(key="frm_principal"):
-    txttitle = st.text_input(label="User Story Title", value="resource page")
+    txttitle = st.text_input(label="User Story Title", value="Redesign a resource page")
     txtuser = st.text_area(label="User Story Description", value="As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.")
     btn_submit = st.form_submit_button(label="Analyze")
 
@@ -67,10 +67,12 @@ def preprocess_text(title, description):
     tokens = [token.lemma_.lower() for token in doc if token.is_alpha and token.text.lower() not in stopwords]
     return ' '.join(tokens)
     
+stLeg, stR, stEE, stNER, stD = st.tabs(["Readability Indexes", "LLM recommendation", "Estimator Cross-project", "NER", "Basic Text Features" ])
+
 if btn_submit:
 
-    stLeg, stR, stEE, stNER, stD = st.tabs(["Readability Indexes", "LLM recommendation", "Estimator Cross-project", "Named Entity", "Basic Text Features" ])
-    df = td.extract_metrics(text=txtuser, spacy_model="en_core_web_sm", metrics=None)
+    
+    
     
     with stNER:
         if useNER:
@@ -84,6 +86,7 @@ if btn_submit:
             
     with stLeg:
         if usereadability:
+            df = td.extract_metrics(text=txtuser, spacy_model="en_core_web_sm", metrics=None)
             st.header("Readability" )
             sst1, sst2, sst3, sst4 = st.columns(4)
                 
@@ -136,5 +139,6 @@ if btn_submit:
             
     with stD:
         if useBasicTextFeatures:
+            df = td.extract_metrics(text=txtuser, spacy_model="en_core_web_sm", metrics=None)
             st.header("Basic Text Features" )
             st.dataframe(df.T)
